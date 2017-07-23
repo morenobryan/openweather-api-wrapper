@@ -4,7 +4,10 @@ module OpenWeather
     base_uri 'api.openweathermap.org/data/2.5/'
 
     def initialize(params = {})
-      @options = { appid: params[:api_key] || ENV['OPENWEATHER_API_KEY'] }
+      @options = {
+        appid: params[:api_key] || ENV['OPENWEATHER_API_KEY'],
+        units: params[:units] || 'metric'
+      }
     end
 
     def handle_response(response)
