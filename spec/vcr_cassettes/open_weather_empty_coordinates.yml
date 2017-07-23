@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=60ec79732bd957b4d0f8b67c30917789&lat=&lon=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sun, 23 Jul 2017 00:47:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '44'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?lat=&lon="
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"cod":"400","message":"Nothing to geocode"}'
+    http_version: 
+  recorded_at: Sun, 23 Jul 2017 00:47:38 GMT
+recorded_with: VCR 3.0.3

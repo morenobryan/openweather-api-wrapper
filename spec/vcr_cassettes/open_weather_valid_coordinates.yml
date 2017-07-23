@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=60ec79732bd957b4d0f8b67c30917789&lat=-49.29&lon=-25.5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sun, 23 Jul 2017 00:44:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '442'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?lat=-49.29&lon=-25.5"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-25.5,"lat":-49.29},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03n"}],"base":"stations","main":{"temp":274.501,"pressure":1012.19,"humidity":100,"temp_min":274.501,"temp_max":274.501,"sea_level":1012.38,"grnd_level":1012.19},"wind":{"speed":15.76,"deg":235.002},"clouds":{"all":36},"dt":1500770664,"sys":{"message":0.0029,"sunrise":1500801753,"sunset":1500833694},"id":0,"name":"","cod":200}'
+    http_version: 
+  recorded_at: Sun, 23 Jul 2017 00:44:24 GMT
+recorded_with: VCR 3.0.3
