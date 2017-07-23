@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  root 'weather#form'
+
   resources :weather do
     collection do
       get 'random'
-      get 'city'
+      get 'form'
+      post 'city'
     end
   end
 end
