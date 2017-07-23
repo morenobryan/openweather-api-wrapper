@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=60ec79732bd957b4d0f8b67c30917789&q=tottalyinvalidcityname,BR
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sun, 23 Jul 2017 00:09:47 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '40'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?q=tottalyinvalidcityname%2cbr"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"cod":"404","message":"city not found"}'
+    http_version: 
+  recorded_at: Sun, 23 Jul 2017 00:09:47 GMT
+recorded_with: VCR 3.0.3

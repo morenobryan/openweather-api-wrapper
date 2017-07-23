@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=60ec79732bd957b4d0f8b67c30917789&q=Curitiba,BR
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sun, 23 Jul 2017 00:15:33 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '440'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?q=curitiba%2cbr"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-49.29,"lat":-25.5},"weather":[{"id":701,"main":"Mist","description":"mist","icon":"50n"}],"base":"stations","main":{"temp":283.77,"pressure":1025,"humidity":100,"temp_min":283.15,"temp_max":284.15},"visibility":3000,"wind":{"speed":2.1,"deg":70},"clouds":{"all":75},"dt":1500768000,"sys":{"type":1,"id":4481,"message":0.0026,"country":"BR","sunrise":1500803978,"sunset":1500842874},"id":6322752,"name":"Curitiba","cod":200}'
+    http_version: 
+  recorded_at: Sun, 23 Jul 2017 00:15:33 GMT
+recorded_with: VCR 3.0.3

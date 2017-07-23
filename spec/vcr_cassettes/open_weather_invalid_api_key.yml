@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=test&q=Curitiba
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sat, 22 Jul 2017 23:45:14 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '107'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?q=curitiba"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"cod":401, "message": "Invalid API key. Please see http://openweathermap.org/faq#error401
+        for more info."}'
+    http_version: 
+  recorded_at: Sat, 22 Jul 2017 23:45:14 GMT
+recorded_with: VCR 3.0.3
