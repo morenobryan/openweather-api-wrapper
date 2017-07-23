@@ -1,0 +1,52 @@
+<%= render 'form' %>
+<br />
+
+<% if @weather.cod != 200 %>
+  <div class="row">
+    <div class="col-md-8">
+      <h2>We're sorry, we couldn't fetch the weather for this location</h2>
+      <p>Here are more details: <%= @weather.message %></p>
+    </div>
+  </div>
+<% else %>
+  <div class="row">
+    <div class="col-md-8">
+      <% if @weather.name.empty? %>
+        <h1>No City</h1>
+      <% else %>
+        <h1><%= @weather.name %></h1>
+      <% end %>
+
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <tr>
+            <% @weather.weather.each do |info| %>
+              <td>
+                <%= image_tag("http://openweathermap.org/img/w/#{info.icon}.png") %>
+                <h2><%= info.main %></h2>
+                <p><%= info.description %></p>
+              </td>
+            <% end %>
+            <td>
+              <h2><%= @weather.main.temp %>°C</h2>
+              <p>Max: <strong><%= @weather.main.temp_max %>°C</strong></p>
+              <p>Min: <strong><%= @weather.main.temp_min %>°C</strong></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Pressure: <strong><%= @weather.main.pressure %> hPa</strong></p>
+              <p>Humidity: <strong><%= @weather.main.humidity %>%</strong></p>
+              <p>Visibility: <strong><%= @weather.visibility %>m</strong></p>
+            </td>
+            <td>
+              <p>Wind Speed: <strong><%= @weather.wind.speed %>m/s</strong></p>
+              <p>Wind Direction: <strong><%= @weather.wind.deg %>°</strong></p>
+              <p>Clouds: <strong><%= @weather.clouds.all %>%</strong></p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+<% end %>
