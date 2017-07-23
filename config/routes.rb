@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     collection do
       get 'random'
       get 'form'
+      get 'city', to: 'weather#form'
       post 'city'
     end
   end
