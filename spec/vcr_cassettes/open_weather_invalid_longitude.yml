@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.openweathermap.org/data/2.5/weather?appid=60ec79732bd957b4d0f8b67c30917789&lat=0&lon=-181
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=60ec79732bd957b4d0f8b67c30917789&lat=0&lon=-181&units=metric
     body:
       encoding: US-ASCII
       string: ''
@@ -39,6 +39,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"cod":"400","message":"-181 is not a float"}'
-    http_version: 
+    http_version:
   recorded_at: Sun, 23 Jul 2017 00:47:14 GMT
 recorded_with: VCR 3.0.3

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.openweathermap.org/data/2.5/weather?appid=60ec79732bd957b4d0f8b67c30917789&q=Curitiba,BR
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=60ec79732bd957b4d0f8b67c30917789&q=Curitiba,BR&units=metric
     body:
       encoding: US-ASCII
       string: ''
@@ -39,6 +39,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"coord":{"lon":-49.29,"lat":-25.5},"weather":[{"id":701,"main":"Mist","description":"mist","icon":"50n"}],"base":"stations","main":{"temp":283.77,"pressure":1025,"humidity":100,"temp_min":283.15,"temp_max":284.15},"visibility":3000,"wind":{"speed":2.1,"deg":70},"clouds":{"all":75},"dt":1500768000,"sys":{"type":1,"id":4481,"message":0.0026,"country":"BR","sunrise":1500803978,"sunset":1500842874},"id":6322752,"name":"Curitiba","cod":200}'
-    http_version: 
+    http_version:
   recorded_at: Sun, 23 Jul 2017 00:15:33 GMT
 recorded_with: VCR 3.0.3
