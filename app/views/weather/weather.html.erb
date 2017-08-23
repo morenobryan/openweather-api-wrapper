@@ -12,7 +12,7 @@
   <div class="row">
     <div class="col-md-8">
       <h1>
-      <% if @weather.name.empty? %>
+      <% if @weather.name.blank? %>
         No City
       <% else %>
         Weather in <%= @weather.name %>
@@ -20,35 +20,33 @@
       </h1>
 
       <p>
-        <%= Time.at(@weather.dt).strftime('%F %T') %>
+        <%= Time.at(@weather.datetime).strftime('%F %T') %>
       </p>
 
       <div class="table-responsive">
         <table class="table table-bordered">
           <tr>
-            <% @weather.weather.each do |info| %>
-              <td>
-                <%= image_tag("http://openweathermap.org/img/w/#{info.icon}.png") %>
-                <h2><%= info.main %></h2>
-                <p><%= info.description %></p>
-              </td>
-            <% end %>
             <td>
-              <h2><%= @weather.main.temp %>°C</h2>
-              <p>Max: <strong><%= @weather.main.temp_max %>°C</strong></p>
-              <p>Min: <strong><%= @weather.main.temp_min %>°C</strong></p>
+              <%= image_tag("http://openweathermap.org/img/w/#{@weather.icon}.png") %>
+              <h2><%= @weather.forecast %></h2>
+              <p><%= @weather.description %></p>
+            </td>
+            <td>
+              <h2><%= @weather.temp %>°C</h2>
+              <p>Max: <strong><%= @weather.temp_max %>°C</strong></p>
+              <p>Min: <strong><%= @weather.temp_min %>°C</strong></p>
             </td>
           </tr>
           <tr>
             <td>
-              <p>Pressure: <strong><%= @weather.main.pressure %> hPa</strong></p>
-              <p>Humidity: <strong><%= @weather.main.humidity %>%</strong></p>
+              <p>Pressure: <strong><%= @weather.pressure %> hPa</strong></p>
+              <p>Humidity: <strong><%= @weather.humidity %>%</strong></p>
               <p>Visibility: <strong><%= @weather.visibility %>m</strong></p>
             </td>
             <td>
               <p>Wind Speed: <strong><%= @weather.wind.speed %>m/s</strong></p>
               <p>Wind Direction: <strong><%= @weather.wind.deg %>°</strong></p>
-              <p>Clouds: <strong><%= @weather.clouds.all %>%</strong></p>
+              <p>Clouds: <strong><%= @weather.clouds %>%</strong></p>
             </td>
           </tr>
         </table>
