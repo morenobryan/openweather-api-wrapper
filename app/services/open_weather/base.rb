@@ -6,7 +6,7 @@ module OpenWeather
     def initialize(params = {})
       @options = {
         appid: params[:api_key] || ENV['OPENWEATHER_API_KEY'],
-        units: params[:units] || 'metric'
+        units: params[:units]
       }
     end
 
