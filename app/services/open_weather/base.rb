@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module OpenWeather
+  # Class to be the base of OpenWeather's API wrapper
   class Base
     include HTTParty
     base_uri 'api.openweathermap.org/data/2.5/'

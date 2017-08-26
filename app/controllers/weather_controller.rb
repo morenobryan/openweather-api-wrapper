@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Controller for weather-related requests
 class WeatherController < ApplicationController
   def random
     latitude = Random.rand(-90.0..90.0)

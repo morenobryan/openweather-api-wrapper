@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module OpenWeather
+  # Class to retrive the OpenWeather's current weather
   class Current < Base
     def city(city:, country: nil)
       response = self.class.get(

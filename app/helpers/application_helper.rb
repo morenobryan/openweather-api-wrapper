@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Rails' default application helper module
 module ApplicationHelper
   def temperature_unit_code
     case session[:temperature_unit]

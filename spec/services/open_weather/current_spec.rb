@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe OpenWeather::Current do
@@ -30,8 +32,9 @@ RSpec.describe OpenWeather::Current do
            vcr: { cassette_name: 'open_weather_invalid_api_key' } do
           open_weather = described_class.new(api_key: 'test', units: 'metric')
           response = open_weather.city(city: city)
+          message = 'Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.'
           expect(response.cod).to eql 401
-          expect(response.message).to eql 'Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.'
+          expect(response.message).to eql message
         end
       end
 
