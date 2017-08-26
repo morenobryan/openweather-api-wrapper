@@ -41,14 +41,26 @@
           </tr>
           <tr>
             <td>
-              <p>Pressure: <strong><%= @weather.pressure %> hPa</strong></p>
-              <p>Humidity: <strong><%= @weather.humidity %>%</strong></p>
-              <p>Visibility: <strong><%= @weather.visibility %>m</strong></p>
+              <% if @weather.pressure.present? %>
+                <p>Pressure: <strong><%= @weather.pressure %> hPa</strong></p>
+              <% end %>
+              <% if @weather.humidity.present? %>
+                <p>Humidity: <strong><%= @weather.humidity %>%</strong></p>
+              <% end %>
+              <% if @weather.visibility.present? %>
+                <p>Visibility: <strong><%= @weather.visibility %>m</strong></p>
+              <% end %>
             </td>
             <td>
-              <p>Wind Speed: <strong><%= @weather.wind.speed %>m/s</strong></p>
-              <p>Wind Direction: <strong><%= @weather.wind.deg %>°</strong></p>
-              <p>Clouds: <strong><%= @weather.clouds %>%</strong></p>
+              <% if @weather.wind.speed.present? %>
+                <p>Wind Speed: <strong><%= @weather.wind.speed %>m/s</strong></p>
+              <% end %>
+              <% if @weather.wind.deg.present? %>
+                <p>Wind Direction: <strong><%= @weather.wind.deg %>°</strong></p>
+              <% end %>
+              <% if @weather.clouds.present? %>
+                <p>Clouds: <strong><%= @weather.clouds %>%</strong></p>
+              <% end %>
             </td>
           </tr>
         </table>
