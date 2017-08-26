@@ -8,8 +8,8 @@
         <%= form.text_field :city, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= form.label :country, "Country (ISO 3166 country code)" %>
-        <%= form.text_field :country, class: "form-control" %>
+        <%= form.label :country, "Country" %>
+        <%= render 'common/country_select', form: form %>
       </div>
       <%= form.button "Get Weather", class: "btn btn-primary btn-sm" %>
       <%= link_to 'Get a random location', random_weather_index_path, class: "btn btn-info btn-sm" %>
