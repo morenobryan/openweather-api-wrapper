@@ -6,4 +6,3 @@ A simple application to display weather information from OpenWeather API. Displa
 
 - Support unit switch directly from the interface (in progress)
 - Support searching for coordinates (the backend is ready, but needs frontend implementation)
-- Test the controllers and the interface with capybara
