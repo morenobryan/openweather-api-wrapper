@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.openweathermap.org/data/2.5/weather?appid=60ec79732bd957b4d0f8b67c30917789&lat=-49.29&lon=-25.5&units=metric
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=60ec79732bd957b4d0f8b67c30917789&lat=-25.5&lon=-25.5&units=metric
     body:
       encoding: US-ASCII
       string: ''

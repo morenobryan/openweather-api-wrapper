@@ -69,7 +69,7 @@ RSpec.describe OpenWeather::Current do
     describe 'correct parameters' do
       it 'returns the object with the right parameters',
          vcr: { cassette_name: 'open_weather_valid_coordinates' } do
-        response = open_weather.coordinates(latitude: -49.29, longitude: -25.5)
+        response = open_weather.coordinates(latitude: -25.5, longitude: -25.5)
         expect(response.cod).to eql 200
         expect(response).to respond_to(:name)
         expect(response).to respond_to(:forecast)
