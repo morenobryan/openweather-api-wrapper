@@ -15,14 +15,18 @@ RSpec.describe OpenWeather::Current do
         response = open_weather.city(city: city, country: country)
         expect(response.cod).to eql 200
         expect(response.name).to eql city
-        expect(response).to respond_to(:coord)
-        expect(response).to respond_to(:weather)
-        expect(response).to respond_to(:base)
-        expect(response).to respond_to(:main)
+        expect(response).to respond_to(:forecast)
+        expect(response).to respond_to(:description)
+        expect(response).to respond_to(:icon)
+        expect(response).to respond_to(:pressure)
+        expect(response).to respond_to(:humidity)
         expect(response).to respond_to(:visibility)
-        expect(response).to respond_to(:wind)
+        expect(response).to respond_to(:temp)
+        expect(response).to respond_to(:temp_max)
+        expect(response).to respond_to(:temp_min)
         expect(response).to respond_to(:clouds)
-        expect(response).to respond_to(:sys)
+        expect(response).to respond_to(:datetime)
+        expect(response).to respond_to(:wind)
       end
     end
 
@@ -67,13 +71,19 @@ RSpec.describe OpenWeather::Current do
          vcr: { cassette_name: 'open_weather_valid_coordinates' } do
         response = open_weather.coordinates(latitude: -49.29, longitude: -25.5)
         expect(response.cod).to eql 200
-        expect(response).to respond_to(:coord)
-        expect(response).to respond_to(:weather)
-        expect(response).to respond_to(:base)
-        expect(response).to respond_to(:main)
-        expect(response).to respond_to(:wind)
+        expect(response).to respond_to(:name)
+        expect(response).to respond_to(:forecast)
+        expect(response).to respond_to(:description)
+        expect(response).to respond_to(:icon)
+        expect(response).to respond_to(:pressure)
+        expect(response).to respond_to(:humidity)
+        expect(response).to respond_to(:visibility)
+        expect(response).to respond_to(:temp)
+        expect(response).to respond_to(:temp_max)
+        expect(response).to respond_to(:temp_min)
         expect(response).to respond_to(:clouds)
-        expect(response).to respond_to(:sys)
+        expect(response).to respond_to(:datetime)
+        expect(response).to respond_to(:wind)
       end
     end
 

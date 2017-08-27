@@ -52,10 +52,10 @@
               <% end %>
             </td>
             <td>
-              <% if @weather.wind.speed.present? %>
+              <% if @weather.wind&.speed.present? %>
                 <p>Wind Speed: <strong><%= @weather.wind.speed %>m/s</strong></p>
               <% end %>
-              <% if @weather.wind.deg.present? %>
+              <% if @weather.wind&.deg.present? %>
                 <p>Wind Direction: <strong><%= @weather.wind.deg %>°</strong></p>
               <% end %>
               <% if @weather.clouds.present? %>
