@@ -4,5 +4,4 @@ A simple application to display weather information from OpenWeather API. Displa
 
 ### Things to improve
 
-- Support unit switch directly from the interface (in progress)
 - Support searching for coordinates (the backend is ready, but needs frontend implementation)

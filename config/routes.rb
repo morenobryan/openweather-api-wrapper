@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       get 'random'
       get 'form'
       get 'city', to: 'weather#form'
-      get 'temperature_unit'
+      get 'unit'
       post 'city'
     end
   end

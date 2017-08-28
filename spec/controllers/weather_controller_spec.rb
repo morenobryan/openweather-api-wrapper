@@ -13,16 +13,16 @@ RSpec.describe WeatherController, type: :controller do
     end
   end
 
-  describe 'GET #temperature_unit' do
+  describe 'GET #unit' do
     it 'sets the session variable with the passed parameter' do
-      get :temperature_unit, params: { temp_unit: 'metric' }
+      get :unit, params: { unit: 'metric' }
 
       expect(response).to redirect_to(root_path)
-      expect(session['temperature_unit']).to eql 'metric'
+      expect(session['unit']).to eql 'metric'
     end
 
     it 'redirects to root path when there is no referer' do
-      get :temperature_unit
+      get :unit
       expect(response).to redirect_to(root_path)
     end
   end

@@ -21,7 +21,7 @@ RSpec.describe 'get weather for a city', type: :feature do
     expect(page).to have_content 'Pressure: 1025 hPa'
     expect(page).to have_content 'Humidity: 100%'
     expect(page).to have_content 'Visibility: 3000m'
-    expect(page).to have_content 'Wind Speed: 2.1m/s'
+    expect(page).to have_content 'Wind Speed: 2.1 meters/second'
     expect(page).to have_content 'Wind Direction: 70°'
     expect(page).to have_content 'Clouds: 75%'
   end

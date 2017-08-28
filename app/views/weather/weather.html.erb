@@ -1,6 +1,6 @@
 <%= render 'form' %>
 <br />
-<%= render 'temperature_unit' %>
+<%= render 'unit' %>
 <br />
 
 <% if @weather.cod != 200 %>
@@ -34,9 +34,9 @@
               <p><%= @weather.description %></p>
             </td>
             <td>
-              <h2><%= @weather.temp %>°<%= temperature_unit_code %></h2>
-              <p>Max: <strong><%= @weather.temp_max %>°<%= temperature_unit_code %></strong></p>
-              <p>Min: <strong><%= @weather.temp_min %>°<%= temperature_unit_code %></strong></p>
+              <h2><%= @weather.temp %>°<%= unit_code %></h2>
+              <p>Max: <strong><%= @weather.temp_max %>°<%= unit_code %></strong></p>
+              <p>Min: <strong><%= @weather.temp_min %>°<%= unit_code %></strong></p>
             </td>
           </tr>
           <tr>
@@ -53,7 +53,7 @@
             </td>
             <td>
               <% if @weather.wind&.speed.present? %>
-                <p>Wind Speed: <strong><%= @weather.wind.speed %>m/s</strong></p>
+                <p>Wind Speed: <strong><%= @weather.wind.speed %> <%= wind_unit_code %></strong></p>
               <% end %>
               <% if @weather.wind&.deg.present? %>
                 <p>Wind Direction: <strong><%= @weather.wind.deg %>°</strong></p>

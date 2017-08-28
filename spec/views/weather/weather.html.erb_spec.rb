@@ -104,14 +104,14 @@ RSpec.describe 'weather/weather.html.erb', type: :view do
         weather.wind = OpenStruct.new(speed: '2')
         assign(:weather, weather)
         render
-        expect(rendered).to include 'Wind Speed: <strong>2m/s</strong>'
+        expect(rendered).to include 'Wind Speed: <strong>2 meters/second</strong>'
       end
 
       it 'renders nothing when wind speed is not present' do
         weather.wind = OpenStruct.new(speed: '')
         assign(:weather, weather)
         render
-        expect(rendered).to_not include 'Wind Speed: <strong>2m/s</strong>'
+        expect(rendered).to_not include 'Wind Speed: <strong>2 meters/second</strong>'
       end
     end
 

@@ -3,12 +3,12 @@
 # Rails' default application controller
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :initialize_temperature_unit
+  before_action :initialize_unit
 
   private
 
-  def initialize_temperature_unit
-    session[:temperature_unit] ||= 'metric'
-    @temp_unit = session[:temperature_unit]
+  def initialize_unit
+    session[:unit] ||= 'metric'
+    @unit = session[:unit]
   end
 end
